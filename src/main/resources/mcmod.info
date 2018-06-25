@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "jeroreintegration",
+    "name": "JER Ore Integration",
+    "description": "A JER addon that integrates various ores with its graphing capabilities.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["_Axieum"],
+    "credits": "Way2muchnoise for the Just Enough Resources mod.",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

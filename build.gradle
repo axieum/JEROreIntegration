@@ -1,0 +1,56 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven { url = "http://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = "${mod_version_major}.${mod_version_minor}.${mod_version_revis}"
+group = "${mod_group}"
+archivesBaseName = "${mod_name}-${version_minecraft}"
+
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}
+
+minecraft {
+    version = "${version_minecraft}-${version_forge}"
+    runDir = "run"
+    mappings = "${version_mappings}"
+
+    replace "@VERSION@", project.version
+    replaceIn "Reference.java"
+}
+
+repositories {
+    maven {
+        name = "CurseForge"
+        url = "https://minecraft.curseforge.com/api/maven/"
+    }
+}
+
+dependencies {
+    deobfCompile "jei:jei_${version_minecraft}:${version_jei}"
+    deobfCompile "just-enough-resources-jer:JustEnoughResources:${version_minecraft}:${version_jer}"
+
+    compile fileTree(dir: 'lib', include: '*.jar')
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
