@@ -37,6 +37,7 @@ repositories {
 dependencies {
     deobfCompile "jei:jei_${version_minecraft}:${version_jei}"
     deobfCompile "just-enough-resources-jer:JustEnoughResources:${version_minecraft}:${version_jer}"
+    deobfCompile "biomes-o-plenty:BiomesOPlenty-${version_minecraft}:${version_bop}:universal"
 
     compile fileTree(dir: 'lib', include: '*.jar')
 }
