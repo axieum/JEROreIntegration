@@ -1,8 +1,8 @@
 package me.axieum.mcmod.jeroreintegration;
 
-import me.axieum.mcmod.jeroreintegration.compatibility.BiomesOPlenty;
 import me.axieum.mcmod.jeroreintegration.config.Config;
-import net.minecraftforge.common.MinecraftForge;
+import me.axieum.mcmod.jeroreintegration.integrations.Integrate;
+import me.axieum.mcmod.jeroreintegration.integrations.biomesoplenty.BiomesOPlenty;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -19,12 +19,14 @@ public class JEROreIntegration
     public void preInit(FMLPreInitializationEvent event)
     {
         // Setup configuration
-        Config.init(event.getSuggestedConfigurationFile());
-        MinecraftForge.EVENT_BUS.register(new Config());
-        
-        // Integrate
-        if (Loader.isModLoaded("biomesoplenty") && Config.BOP_ENABLED)
+        Config.init(event.getModConfigurationDirectory());
+
+        // Generate default mod configuration files
+        if (Loader.isModLoaded("biomesoplenty"))
             BiomesOPlenty.init();
+
+        // Load all integrations
+        Integrate.init();
     }
 
     @Mod.EventHandler
@@ -32,7 +34,7 @@ public class JEROreIntegration
     {
         //
     }
-    
+
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {

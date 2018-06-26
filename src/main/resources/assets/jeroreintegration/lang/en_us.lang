@@ -1,2 +1,5 @@
 jeroreintegration.config.bopEnabled.title=BOP Enabled
 jeroreintegration.config.bopEnabled.description=Enables Biomes O' Plenty support
+
+jeroreintegration.config.customEnabled.title=CUSTOM Enabled
+jeroreintegration.config.customEnabled.description=Enables the loading of custom '.json' files
