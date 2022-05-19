@@ -32,12 +32,14 @@ repositories {
         name = "CurseForge"
         url = "https://minecraft.curseforge.com/api/maven/"
     }
+	maven { url "https://maven.blamejared.com" }
 }
 
 dependencies {
-    deobfCompile "jei:jei_${version_minecraft}:${version_jei}"
-    deobfCompile "just-enough-resources-jer:JustEnoughResources:${version_minecraft}:${version_jer}"
-    deobfCompile "biomes-o-plenty:BiomesOPlenty-${version_minecraft}:${version_bop}:universal"
+    deobfCompile	"jei:jei_${version_minecraft}:${version_jei}"
+    deobfCompile	"just-enough-resources-jer:JustEnoughResources:${version_minecraft}:${version_jer}"
+    deobfCompile	"biomes-o-plenty:BiomesOPlenty-${version_minecraft}:${version_bop}:universal"
+	deobfCompile 	"blusunrize:ImmersiveEngineering:${version_ie}"
 
     compile fileTree(dir: 'lib', include: '*.jar')
 }
