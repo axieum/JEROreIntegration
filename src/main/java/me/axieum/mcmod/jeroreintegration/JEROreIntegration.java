@@ -22,20 +22,19 @@ public class JEROreIntegration
         // Setup configuration
         Config.init(event.getModConfigurationDirectory());
 
-        // Generate default mod configuration files
-        if (Loader.isModLoaded("biomesoplenty"))
-            BiomesOPlenty.init();
-        if (Loader.isModLoaded("immersiveengineering"))
-        	ImmersiveEngineering.init();
-
-        // Load all integrations
-        Integrate.init();
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event)
     {
-        //
+    	// Generate default mod configuration files
+        if (Loader.isModLoaded("biomesoplenty"))
+            BiomesOPlenty.init();
+    	if (Loader.isModLoaded("immersiveengineering"))
+        	ImmersiveEngineering.init();
+
+        // Load all integrations
+        Integrate.init();
     }
 
     @Mod.EventHandler

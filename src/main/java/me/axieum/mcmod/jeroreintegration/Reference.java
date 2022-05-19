@@ -8,6 +8,6 @@ public class Reference
     public static final String MOD_VERSION = "@VERSION@";
 
     public static final String DEPENDENCIES_REQUIRED = "required-after:jeresources;";
-    public static final String DEPENDENCIES_OPTIONAL = "after:biomesoplenty;";
+    public static final String DEPENDENCIES_OPTIONAL = "after:biomesoplenty;after:immersiveengineering;";
     public static final String DEPENDENCIES = DEPENDENCIES_REQUIRED + DEPENDENCIES_OPTIONAL;
 }
