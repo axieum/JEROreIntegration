@@ -269,11 +269,11 @@ public class Integrate
         return map.computeIfAbsent(dim, k -> new Restriction(new DimensionRestriction(dim)));
     }
 
-    public static boolean write(File file, OreBlock... oreBlocks)
+    public static boolean write(String fileName, OreBlock... oreBlocks)
     {
         try
         {
-            JsonWriter writer = new JsonWriter(new FileWriter(new File(Config.config_dir, "biomesoplenty.json")));
+            JsonWriter writer = new JsonWriter(new FileWriter(new File(Config.config_dir, fileName)));
             writer.setIndent("\t");
             writer.beginArray();
 

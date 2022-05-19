@@ -33,6 +33,6 @@ public class BiomesOPlenty
     {
         File bopFile = Config.getFile("biomesoplenty.json");
         if (bopFile == null)
-            Integrate.write(bopFile, BOP_ORES);
+            Integrate.write("biomesoplenty.json", BOP_ORES);
     }
 }
